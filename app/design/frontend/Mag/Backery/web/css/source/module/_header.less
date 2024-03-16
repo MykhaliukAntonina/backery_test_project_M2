@@ -1,0 +1,107 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common = true) {
+
+        .page-wrapper {
+            .header.content {
+                background: #BC8660;
+                max-width: 100%;
+                margin: 0;
+                height: 100%;
+                align-items: center;
+                border-top: 1px solid #E5E5E5;
+
+                .minicart-wrapper {
+                    .action.showcart:before {
+                        font-size: 3.3rem;
+                        color: #2A1B10;
+                    }
+                }
+                li.authorization-link {
+                    margin: 12px;
+                    font-size: 1.8rem;
+                    text-decoration: none;
+                    list-style: none;
+
+                    a {
+                        color: #2A1B10;
+                    }
+                }
+            }
+        }
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .page-header {
+        margin-bottom: 10px;
+        height: 55px;
+        .content {
+            .logo {
+                left: 65px;
+                margin-top: 0;
+
+                img {
+                    height: 50px;
+                }
+            }
+
+            .minicart-wrapper {
+                float: right;
+            }
+            .authorization-link {
+                width: fit-content;
+                float: right;
+                margin: 12px;
+            }
+        }
+
+    }
+}
+
+//
+//  Decktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .page-wrapper {
+        .header.content {
+            display: flex;
+            .logo {
+                display: flex;
+                flex: 0 0 12%;
+                max-width: 12%;
+                margin: 5px;
+            }
+            .nav-sections {
+                display: flex;
+                flex: 0 0 75%;
+                max-width: 75%;
+                justify-content: center;
+                background: #BC8660;
+                .navigation {
+                    background: #BC8660;
+                    font-weight: 500;
+
+                    li.level0 {
+                        padding: 0 20px;
+                        font-size: 1.5rem;
+
+                        .level-top {
+                            color: #2A1B10;
+                            font-size: 2.1rem;
+                        }
+                    }
+                }
+            }
+            .minicart-wrapper {
+                margin: 0 15px;
+            }
+        }
+    }
+}
+

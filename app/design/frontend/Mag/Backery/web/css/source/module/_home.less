@@ -1,0 +1,91 @@
+//
+//  Common
+//  _____________________________________________
+& when (@media-common = true) {
+    .cms-index-index {
+        .block-static-block {
+            margin: 0;
+        }
+        .history {
+            padding: 40px 50px;
+            background: #BC8660;
+            .content {
+                max-width: 980px;
+                margin: 0 auto;
+                padding: 0 20px;
+                text-align: center;
+                color: #fff;
+                p {
+                    max-width: 980px;
+                    margin-bottom: 40px;
+                    line-height: 2.5;
+                }
+            }
+        }
+        .contact-us {
+            display: flex;
+            background: #8C4921;
+            color: #FFFFFF;
+            .img-form {
+                position: relative;
+                overflow: hidden;
+            }
+            .form.contact {
+                .input-text {
+                    border-radius: 15px;
+                }
+                .actions-toolbar .primary .action {
+                    background: #F7CAC9;
+                    border: 1px solid #F7CAC9;
+                    color: #2A1B10;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .cms-index-index .contact-us {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        .img-form {
+            width: 100%;
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+        .form.contact {
+            margin: 30px;
+        }
+    }
+}
+
+//
+//  Decktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .cms-index-index .contact-us {
+        .img-form {
+            width: 50%;
+            img {
+                position: absolute;
+                width: auto;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+        .form.contact {
+            float: left !important;
+            width: 40% !important;
+            margin: 30px 50px;
+        }
+    }
+}
