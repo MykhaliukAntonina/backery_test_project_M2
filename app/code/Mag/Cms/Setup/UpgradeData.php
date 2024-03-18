@@ -5,18 +5,37 @@ namespace Mag\Cms\Setup;
 use Magento\Framework\Setup\UpgradeDataInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
+use Magento\Cms\Model\BlockFactory;
+use Magento\Framework\App\Config\Storage\WriterInterface;
 
 class UpgradeData implements UpgradeDataInterface
 {
     private $blockFactory;
 
-    public function __construct(\Magento\Cms\Model\BlockFactory $blockFactory)
+    private $configWriter;
+
+
+
+    public function __construct(
+        BlockFactory $blockFactory,
+        WriterInterface $configWriter)
     {
         $this->blockFactory = $blockFactory;
+        $this->configWriter = $configWriter;
     }
 
+
+
     public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+
+
     {
+
+
+        if (version_compare($context->getVersion(), '8.0.0', '<')) {
+            $this->configWriter->save('web/default/front', 'newmodule/index/index', 'default', 0);
+        }
+
         if (version_compare($context->getVersion(), '7.0.0', '<')) {
             $contactCustomerService = [
                 'title' => 'Write Us',
