@@ -4,7 +4,7 @@
 
 /* Homepage banner */
 & when (@media-common = true) {
-    .cms-index-index {
+    .cms-index-index, .newmodule-index-index {
         .home-banner {
             display: flex;
             position: relative;
@@ -37,7 +37,7 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-    .cms-index-index .home-banner {
+    .cms-index-index, .newmodule-index-index .home-banner {
         height: 250px;
     }
 }

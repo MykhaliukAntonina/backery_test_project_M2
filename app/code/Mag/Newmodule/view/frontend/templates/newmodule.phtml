@@ -1,0 +1,25 @@
+<div><div><?php echo $block->getLayout()
+    ->createBlock('Magento\Cms\Block\Block')
+    ->setBlockId('top_banner')
+    ->toHtml();
+?>
+</div>
+
+    <div>
+        <?php
+        echo $block->getLayout()
+            ->createBlock('Magento\Cms\Block\Block')
+            ->setBlockId('our_history')
+            ->toHtml();
+        ?>
+    </div>
+<div>
+    <?php echo $block->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('write_us')
+        ->toHtml(); ?>
+</div>
+</div>
+
+
+
